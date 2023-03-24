@@ -1,0 +1,210 @@
+Zadanie 1.Napisz skrypt, który pobiera od użytkownika zdanie i liczy w nim spacje. Wynik wyświetla na ekranie 
+(użyj instrukcji input)
+
+
+Zdanie = input("Podaj zdanie: ")
+print(Zdanie)
+
+liczba_spacji = Zdanie.count(' ')
+print("Liczba spacji w zdaniu: ",liczba_spacji)
+
+Zadanie 2. Napisz skrypt, który pobiera od użytkownika dwie wartości i mnoży je przez siebie. Wynik wyświetla 
+na ekranie (użyj instrukcji readline() i write())
+
+import sys
+#Pobieramy 2 wartosci
+sys.stdout.write("Podaj a: ")
+a = sys.stdin.readline()
+sys.stdout.write("Podaj b: ")
+b = sys.stdin.readline()
+#Konwertujemy wartosci na liczby całkowite
+a = int(a)
+b = int(b)
+#Mnożymy wartosci
+sys.stdout.write(str(a*b))
+
+
+//////////////////////////////////////
+#d = float(input.readline())
+#e = float(input.readline())
+#wynik = d * e
+#write(wynik)
+
+# Pobranie pierwszej wartości od użytkownika
+value1 = float(input.readline())
+
+# Pobranie drugiej wartości od użytkownika
+value2 = float(input.readline())
+
+# Obliczenie wyniku mnożenia
+result = value1 * value2
+
+# Wyświetlenie wyniku na ekranie
+output = "Wynik mnożenia: " + str(result) + "\n"
+output_stream = open(1, 'w')
+output_stream.write(output)
+output_stream.close()
+
+Zadanie 3. Odszukaj w dokumentacji, jakie operatory można używać w instrukcjach warunkowych (np. równe, 
+różne, mniejsze bądź równe itp.)
+
+Operatory porównania wykorzystywane w instrukcjach warunkowych
+== - operator równości, sprawdza czy x jest równy y
+!= - sprawdza czy jeden obiekt różni się od drugiego, sprawdza czy x różni się od y
+> - większy niż, sprawdza czy x jest większy od y
+< - mniejszy niż, sprawdza czy x jest mniejszy od y
+>= - większy niż lub równy, sprawdza czy x jest większy lub równy y
+<= - mniejszy niż lub równy, sprawdza czy x jest mniejszy lub równy y
+
+Zadanie 4. Napisz skrypt, który pobiera od użytkownika liczbę i wypisuje na ekran wartość bezwzględną tej liczby.
+
+a = float(input("Podaj liczbę: "))
+print("Wartość bezwględna podanej liczby to: ",(abs(a)))
+
+Zadanie 5./////////////////
+Napisz skrypt, który pobiera od użytkownika trzy liczby a, b i c. Sprawdza następujące warunki:
+czy a zawiera się w przedziale (0,10> oraz czy jednocześnie a>b lub b>c. Jeśli warunki są spełnione lub 
+nie to ma się wyświetlić odpowiedni komunikat na ekranie.
+
+a = float(input('Podaj a:'))
+b = float(input('Podaj b:'))
+c = float(input('Podaj c:'))
+
+#if a > 0 and a < 10:
+#    print("a zawiera się w przedziale")
+#elif a > b or b > c:
+#    print("a jest większe od b i b jest większe od c")
+#else:
+#    print("Zadne warunki nie zostały spełnione")
+
+if a > 0 and a < 10 and a > b or b > c:
+
+
+    print("Wszystkie warunki zostały spełnione")
+else:
+    print("Nie wszystkie warunki nie zostały spełnione")
+
+Zadanie 6. Napisz pętlę, która wyświetla liczby podzielne przez 5.
+
+for i in range(1, 101):
+    if i % 5 == 0:
+        print(i)
+
+Zadanie 7. Napisz pętle, która pobiera liczby od użytkownika i wyświetla ich kwadraty na ekranie.
+
+while True:
+    liczba = int(input("Podaj liczbę: "))
+    kwadrat = liczba ** 2
+    print("Kwadrat liczby", liczba, "to", kwadrat)
+
+#Wersja z try except
+
+while True:
+    try:
+        liczba = int(input("Podaj liczbę: "))
+        kwadrat = liczba ** 2
+        print("Kwadrat liczby", liczba, "to", kwadrat)
+    except ValueError:
+        print("To nie jest liczba. Spróbuj jeszcze raz.")
+
+Zadanie 8. Napisz skrypt, który odczytuje liczby od użytkownika i umieszcza je na liście. Wykorzystaj pętle while.
+
+liczby = []
+while True:
+    try:
+        liczba = int(input("Podaj liczbę: "))
+        liczby.append(liczba)
+    except ValueError:
+        print("To nie jest liczba. Koniec wprowadzania")
+        break
+print("Wprowadzone liczby to: ",liczby)
+
+Zadanie 9.
+Napisz skrypt, który odczytuje od użytkownika liczbę wielocyfrową i sumuje jej cyfry. Wynik
+#wyświetla na ekranie. Wykorzystaj pętle while.
+
+liczba = input("Podaj liczbę: ")
+suma = 0
+i = 0
+while i < len(liczba):
+    suma += int(liczba[i])
+    i += 1
+print("Suma cyfr liczby",liczba,"to", suma)
+
+Zadanie 10. Napisz skrypt, który rysuje wieżę z literek. Użytkownik podaje wysokość wieży ale nie więcej jak 10.
+#A
+#AA
+#AAA
+#AAAA
+#AAAAA
+#AAAAAA
+
+wysokosc = int(input("Podaj wysokość wieży (od 1 do 10): "))
+
+if wysokosc < 1 or wysokosc > 10:
+    print("Nieprawidłowa wartość!")
+else:
+    for i in range(1, wysokosc+1):
+        print('A' * i)
+
+Zadanie 11. Napisz skrypt, który rysuje diament. Użytkownik podaje wysokość nie mniej jak 3 i nie więcej jak 9 
+wysokość=3
+
+wysokosc = int(input("Podaj wysokość diamentu (od 3 do 9): "))
+if wysokosc < 3 or wysokosc > 9:
+    print("Wysokość musi być pomiędzy 3 a 9!")
+else:
+    for i in range(wysokosc):
+        if i < wysokosc // 2 + 1:  #dzielenie bez reszty
+            print(" " * (wysokosc // 2 - i) + "o" * (i * 2 + 1))
+        else:
+            print(" " * (i - wysokosc // 2) + "o" * ((wysokosc - i)* 2-1))
+
+
+Zadanie 12. Napisz skrypt, który wyświetla i oblicza tabliczkę mnożenia od 1 do 100
+
+for i in range(1, 11):
+    for j in range(1, 11):
+        mnozenie = i * j
+        print(f"{i} x {j} = {mnozenie}")
+
+Zadanie 14.Napisz skrypt, który liczy pierwiastek z liczby podanej przez użytkownika jeśli użytkownik poda 
+wartość ujemną to powinien być wyłapany błąd
+
+import math
+
+#pobieramy liczbę od użytkownika
+x = float(input("Podaj liczbę: "))
+
+#obsługa wyjątku w przypadku liczby ujemnej
+try:
+    if x < 0:
+        raise ValueError("Liczba nie może być ujemna!")
+    else:
+        #obliczenie pierwiastka kwadratowego i wyświetlenie wyniku
+        wynik = math.sqrt(x)
+        print("Pierwiastek kwadratowy z {} wynosi {}".format(x, wynik))
+except ValueError as e:
+    print(e)
+
+lub zwykład składnia
+
+x = float(input("Podaj liczbę: "))
+
+#obsługa wyjątku w przypadku liczby ujemnej
+if x < 0:
+    print("Liczba nie może być ujemna!")
+else:
+    #obliczenie pierwiastka kwadratowego i wyświetlenie wyniku
+    wynik = math.sqrt(x)
+    print("Pierwiastek kwadratowy z liczby",x,"wynosi:",wynik)
+
+Zadanie 15. Napisz skrypt, w którym użytkownik ma podać liczbę i który będzie wyłapywał błąd
+gdy użytkownik poda literę zamiast cyfry.
+
+while True:
+    try:
+	 liczba = int(input("Podaj liczbę: "))
+       break
+    except ValueError:
+       print("Błąd! Wprowadzono literę zamiast cyfry. Prosze spróbować ponownie.")
